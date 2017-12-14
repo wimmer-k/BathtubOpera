@@ -171,8 +171,8 @@ int main(int argc, char* argv[]){
       continue;
     TSdiff->Fill(1.0*EUts-BRts);
     
-    if(1.0*EUts-BRts<-37 || 1.0*EUts-BRts>-34)
-      continue;
+    //    if(1.0*EUts-BRts<-37 || 1.0*EUts-BRts>-34)
+    //      continue;
 
     mult->Fill(eurica->GetHits().size());
     

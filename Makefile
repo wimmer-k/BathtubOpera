@@ -20,7 +20,7 @@ CFLAGS		= -Wall -Wno-long-long -g -O3 $(ROOTCFLAGS) -fPIC
 
 INCLUDES        = -I./inc -I$(COMMON_DIR) -I$(TARTSYS)/include -I$(EURICASYS) -I$(SALVADORSYS)
 BASELIBS 	= -lm $(ROOTLIBS) $(ROOTGLIBS) -L$(LIB_DIR) -L$(TARTSYS)/lib -lSpectrum -lXMLParser
-ALLIBS  	=  $(BASELIBS) -lCommandLineInterface -lanaroot -lananadeko -lanacore -lanabrips -lanaloop -lanadali -lSalvador
+ALLIBS  	=  $(BASELIBS) -lCommandLineInterface -lanaroot -lananadeko -lanacore -lanabrips -lanaloop -lSalvador
 LIBS 		= $(ALLIBS)
 LFLAGS		= -g -fPIC -shared
 CFLAGS += -Wl,--no-as-needed
@@ -37,7 +37,7 @@ MergeEURICA: MergeEURICA.cc $(LIB_DIR)/libSalvador.so $(LIB_DIR)/libEURICA.so $(
 	@echo "Compiling $@"
 	@$(CPP) $(CFLAGS) $(INCLUDES) $< $(LIBS) -lEURICA -lGo4EURICA $(O_FILES) -o $(BIN_DIR)/$@ 
 
-IsomerHistos: IsomerHistos.cc $(LIB_DIR)/libSalvator.so $(LIB_DIR)/libEURICA.so 
+IsomerHistos: IsomerHistos.cc $(LIB_DIR)/libSalvador.so $(LIB_DIR)/libEURICA.so 
 	@echo "Compiling $@"
 	@$(CPP) $(CFLAGS) $(INCLUDES) $< $(LIBS) -lEURICA -lGo4EURICA -o $(BIN_DIR)/$@ 
 
